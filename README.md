@@ -34,5 +34,22 @@ Now install the requirements for this project using
 ```html
 pip install -r requirements.txt
 ```
+Hyperparameters
+
+Model selection can be set to 1 for images where subject is 5 meters away from camera and 0 for images where subject is 2 meters away from camera. Increasing the minimum detection confidence will lead to more accurate detection but 50% is default.
+
+```python
+with mp_face_detection.FaceDetection(model_selection=0, min_detection_confidence=0.5) as face_detection:
+```
+
+## How to run using CLI?
+
+This simple script will help you to run the program using the command line interface.
+
+```python
+python3 main.py -m mode -n filename -e fileextension -k kernelsize
+```
+
+Acceptable modes are image, video, and webcam with .jpg or .mp4 file extensions.
 
 Have fun playing around with the code.
