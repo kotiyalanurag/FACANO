@@ -8,6 +8,31 @@
 
 FACANO is capable of detecting and anonymizing faces in three different modes i.e., static images, videos, and live webcam feed. It can detect and anonymize multiple faces at once.
 
+## Hyperparameters
+
+Model selection can be set to 1 for images where the subject is 5 meters away from the camera and 0 for images where the subject is 2 meters away. Increasing the minimum detection confidence will lead to more accurate detection but 50% is default.
+
+```python
+with mp_face_detection.FaceDetection(model_selection = 0, min_detection_confidence = 0.5) as face_detection:
+```
+
+## Result
+
+Given below is an anonymized image that was blurred using a kernel size of 70.
+<p align="center">
+  <img src="https://github.com/kotiyalanurag/FACANO/blob/main/src/image001.jpg" max-width=100% height='300' />
+  <img src="https://github.com/kotiyalanurag/FACANO/blob/main/output/image001_blur_70.jpg" max-width=100% height='300' />
+</p>
+
+Here is another result with a kernel size of 90 and 120.
+<p align="center">
+  <img src="https://github.com/kotiyalanurag/FACANO/blob/main/src/image002.jpg" max-width=100% height='300' />
+  <img src="https://github.com/kotiyalanurag/FACANO/blob/main/output/image002_blur_90.jpg" max-width=100% height='300' />
+  <img src="https://github.com/kotiyalanurag/FACANO/blob/main/output/image002_blur_120.jpg" max-width=100% height='300' />
+</p>
+
+The images used here were taken from [unsplash.com](https://unsplash.com/) and the video was taken from [pexels.com](https://www.pexels.com/).
+
 ## How to get started?
 
 Open the terminal on your mac and type 
@@ -34,17 +59,10 @@ Now install the requirements for this project using
 ```html
 pip install -r requirements.txt
 ```
-Hyperparameters
-
-Model selection can be set to 1 for images where subject is 5 meters away from camera and 0 for images where subject is 2 meters away from camera. Increasing the minimum detection confidence will lead to more accurate detection but 50% is default.
-
-```python
-with mp_face_detection.FaceDetection(model_selection=0, min_detection_confidence=0.5) as face_detection:
-```
 
 ## How to run using CLI?
 
-This simple script will help you to run the program using the command line interface.
+Use the following script to run this program using a command line interface.
 
 ```python
 python3 main.py -m mode -n filename -e fileextension -k kernelsize
