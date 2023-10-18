@@ -30,7 +30,7 @@ file_path = os.path.join('.', 'src', file_name + file_ext)
 # face detection
 mp_face_detection = mp.solutions.face_detection
 
-with mp_face_detection.FaceDetection(model_selection=0, min_detection_confidence=0.5) as face_detection:
+with mp_face_detection.FaceDetection(model_selection = 0, min_detection_confidence = 0.5) as face_detection:
     if args.mode == 'image':
         image = cv2.imread(file_path)
         
