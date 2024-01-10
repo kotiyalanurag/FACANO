@@ -65,7 +65,7 @@ pip install -r requirements.txt
 Use the following script to run this program using a command line interface.
 
 ```python
-python3 main.py -m mode -n filename -e fileextension -k kernelsize
+python3 main.py -m [MODE] -n [FILENAME] -e [FILEEXTENSION] -k [KERNELSIZE]
 ```
 
 Acceptable modes are image, video, and webcam with .jpg or .mp4 file extensions.
